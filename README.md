@@ -11,11 +11,11 @@ These are basic instructions for setting up Amazon S3 for uploading photos. The 
 
 #### Front End
 - If you are uploading image to S3 from a local machine, you will likely need either an input or some kind of drop zone for uploading your images. This app has a front end built in React and uses a simple file input( ```<input type=file />``` ) to choose a file. The input has an onChange event listener that captures the input event and stores the file in a variable called "file" (see ImageUploader.js to see how this was done).
-- This app then uses FileReader to read the stored file.
+- This app then uses FileReader to read the stored file before sending it to the server to be uploaded to S3.
 
-    <details><summary>More info about FileReader</summary>
+    <details><summary>More explanation about FileReader</summary>
 
-        • FileReader is a file API built into HTML5 for uploading local images to the web.
+        • FileReader is not an S3 thing. It is a file API built into HTML5 for uploading local images to the web. Most browsers support it. No installation is required.
         • There are four basic steps for using FileReader in an app like this:
             1. Create an instance of FileReader and store it in a variable (often named "reader").
             2. Save the file in variable (often named "file"). This is the same file mentioned above, 
@@ -26,20 +26,21 @@ These are basic instructions for setting up Amazon S3 for uploading photos. The 
             4. Use the built-in .onload method to tell FileReader what to do with the file once the reader 
             has read it. Once the file has been read, FileReader stores the file in the .result property on 
             the reader (e.g., in "reader.result" if the FileReader instance was named "reader").
-        • Here is an example of these steps (the same code used in this app):
-        
-```js
-    const reader = new FileReader(); // create instance of FileReader
-    const file = e.target.files[0]; // save file from input event in a variable
-    reader.readAsDataURL(file); // tell reader to read file using built-in method
-    reader.onload = () => { // tell reader what to do with file once read
-        const pic = {
-        file: reader.result, // .result is where the result of the read operation is stored
-        filename: file.name,
-        filetype: file.type
-        }
-        this.setState({ pic })
-    }
-```
 
+        ```js
+            const reader = new FileReader(); // create instance of FileReader
+            const file = e.target.files[0]; // save file from input event in a variable
+            reader.readAsDataURL(file); // tell reader to read file using built-in method
+            reader.onload = () => { // tell reader what to do with file once read
+                const pic = {
+                file: reader.result, // .result is where the result of the read operation is stored
+                filename: file.name,
+                filetype: file.type
+                }
+                this.setState({ pic })
+            }
+        ```
+        
     </details>
+        
+
