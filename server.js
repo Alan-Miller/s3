@@ -1,10 +1,10 @@
-require('dotenv').config();
+require('dotenv').config(); // 'dot-env' gives us acces to the .env variables
 const express = require('express')
   , bodyParser = require('body-parser')
   , AWS = require('aws-sdk') // import and require AWS
   , app = express();
 
-AWS.config.update({ // AWS configuration
+AWS.config.update({ // AWS configuration using .env variables
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   region: process.env.AWS_REGION
