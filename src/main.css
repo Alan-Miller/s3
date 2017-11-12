@@ -14,9 +14,6 @@
   align-items: center;
   justify-content: center;
 }
-.users {
-  display: flex;
-}
 
 .user {
   width: 300px;
@@ -27,16 +24,20 @@
 }
 
 .user .text {
-  padding: 10px;
+  height: 200px;
+  padding: 20px;
   line-height: 1.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.user img {
+.pic img {
   height: 300px;
 }
 .user h1 {
   margin: 20px 0;
-  text-align: center;
 }
 
 .ImageUploader {
@@ -45,6 +46,20 @@
   left: 0;
   display: flex;
   flex-direction: column;
+}
+
+.ImageUploader button {
+  padding: 7px 10px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0px;
+  outline: none;
+}
+
+.ImageUploader button:hover {
+  background-color: #222;
+  color: white;
 }
 
 .fileInput {
@@ -59,6 +74,23 @@
 
 .pic {
   position: relative;
+  height: 300px;
+  width: 300px;
+  background-color: #333;
+}
+
+.unavailable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  font-size: 2rem;
+  color: #777;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 300px;
 }
 
 .chosenPic {
