@@ -14,6 +14,7 @@ const S3 = new AWS.S3(); // create instance of S3
 app.use(bodyParser.json()); // need bodyParser for request body
 
 app.post('/api/photo/:userID', (req, res) => { // front-end request sends chosen image to post endpoint
+  // RegExp formats the file name and Buffer formats the data to be sent
   const buffer = new Buffer(req.body.file.replace(/^data.*;base64,/, ""), 'base64');
   const params = {
     Bucket: process.env.AWS_BUCKET,
