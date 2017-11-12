@@ -12,7 +12,6 @@ class App extends Component {
 
   componentDidMount() {
     axios.get('/api/users').then(users => {
-      // return users;
       this.setState({ users: users.data })
     });
   }
@@ -20,11 +19,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ImageUploader />
         <div className="users">
           {this.state.users && this.state.users.map((user, i) => (
             <div key={user.id} className="user">
-              <img src={user.img.length ? user.img : unavailable} alt="user" />
+              <div className="pic">
+                <img src={user.img.length ? user.img : unavailable} alt="user" />
+                <ImageUploader user={user} />
+              </div>
               <div className="text">
                 <h1>{user.username}</h1>
                 <p>{user.desc}</p>

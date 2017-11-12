@@ -38,3 +38,34 @@
   margin: 20px 0;
   text-align: center;
 }
+
+.ImageUploader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fileInput {
+  height: 300px;
+  width: 300px;
+  background-color: red;
+  outline: none;
+  border: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.pic {
+  position: relative;
+}
+
+.chosenPic {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+}

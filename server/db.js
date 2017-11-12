@@ -2,13 +2,13 @@ const users = [
   {
     id: 1,
     username: 'Ox',
-    img: '',
+    img: 'http://alan-demo.s3-us-west-1.amazonaws.com/ox.jpg',
     desc: 'Bright smile. Fun. Kind. Silly in a good way. Dear companion.'
   },
   {
     id: 2,
     username: 'Rooster',
-    img: '',
+    img: 'https://alan-demo.s3-us-west-1.amazonaws.com/rooster.jpg',
     desc: 'Wakes up late. Sings badly. Cheerful and sad at the same time.'
   },
   {
