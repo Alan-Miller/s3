@@ -17,14 +17,14 @@ These are basic instructions for setting up Amazon S3 for uploading photos. The 
 
         • FileReader is a file API built into HTML5 for uploading local images to the web.
         • There are four basic steps for using FileReader in an app like this:
-            1. Create an instance of FileReader and store it in a variable (often named ```reader```).
-            2. Save the file in variable (often named ```file```). This is the same file mentioned above, 
+            1. Create an instance of FileReader and store it in a variable (often named "reader").
+            2. Save the file in variable (often named "file"). This is the same file mentioned above, 
             the file captured by the input event.
             3. Tell the reader to read (i.e., interpret) the file using a built-in FileReader method. Here, 
             we use the .readAsDataURL method to read image data, but there are other methods too, such as 
             the .readAsText method for reading text data.
             4. Use the built-in .onload method to tell FileReader what to do with the file once the reader 
             has read it. Once the file has been read, FileReader stores the file in the .result property on 
-            the reader (e.g., in ```reader.result``` if the FileReader instance was named ```reader```)
+            the reader (e.g., in "reader.result" if the FileReader instance was named "reader")
 
     </details>
