@@ -25,7 +25,7 @@ These are basic instructions for setting up Amazon S3 for uploading photos. The 
 ```
 
 ## Front End: input event and FileReader
-- If you are uploading image to S3 from a local machine, you will likely need either an input or some kind of drop zone for uploading your images. This app has a front end built in React and uses a simple file input( ```<input type=file />``` ) to choose a file. The input has an onChange event listener that captures the input event and stores the file in a variable called "file" (see ImageUploader.js to see how this was done).
+- If you are uploading image to S3 from a local machine, you will likely need either an input or some kind of drop zone for uploading your images. This app has a front end built in React and uses a simple file input tag ( ```<input type=file />``` ) to choose a file. The input has an onChange event listener that captures the input event and stores the file in a variable called "file" (see ImageUploader.js to see how this was done).
 - This app then uses FileReader to read the stored file before sending it to the server to be uploaded to S3.
 
 <details><summary>More explanation about FileReader</summary>
@@ -63,7 +63,7 @@ These are basic instructions for setting up Amazon S3 for uploading photos. The 
 
 <br/>
         
-- Finally, this app uses a button (conditionally rendered once an image has been set to this.state) which triggers a function that passes the value on ```this.state.pic``` to a POST request, sending it to the server.
+- Finally, this app uses a button (conditionally rendered once an image has been set to ```this.state```) which triggers a function that passes the value on ```this.state.pic``` to a POST request, sending it to the server.
 
 
 ## Server
