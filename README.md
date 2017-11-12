@@ -25,6 +25,20 @@ These are basic instructions for setting up Amazon S3 for uploading photos. The 
             the .readAsText method for reading text data.
             4. Use the built-in .onload method to tell FileReader what to do with the file once the reader 
             has read it. Once the file has been read, FileReader stores the file in the .result property on 
-            the reader (e.g., in "reader.result" if the FileReader instance was named "reader")
+            the reader (e.g., in "reader.result" if the FileReader instance was named "reader").
+        • Here is an example of these steps (the same code used in this app):
+        ```js
+            const reader = new FileReader(); // create instance of FileReader
+            const file = e.target.files[0]; // save file from input event in a variable
+            reader.readAsDataURL(file); // tell reader to read file using built-in method
+            reader.onload = () => { // tell reader what to do with file once read
+              const pic = {
+                file: reader.result, // .result is where the result of the read operation is stored
+                filename: file.name,
+                filetype: file.type
+              }
+              this.setState({ pic })
+            }
+        ```
 
     </details>

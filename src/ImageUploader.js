@@ -15,12 +15,12 @@ export default class ImageUploader extends Component {
   }
 
   choosePic(e) {
-    const reader = new FileReader();
-    const file = e.target.files[0];
-    reader.readAsDataURL(file);
-    reader.onload = () => {
+    const reader = new FileReader(); // create instance of FileReader
+    const file = e.target.files[0]; // save file from input event in a variable
+    reader.readAsDataURL(file); // tell reader to read file using built-in method
+    reader.onload = () => { // tell reader what to do with file once read
       const pic = {
-        file: reader.result,
+        file: reader.result, // .result is where the result of the read operation is stored
         filename: file.name,
         filetype: file.type
       }
