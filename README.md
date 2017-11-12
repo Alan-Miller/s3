@@ -68,6 +68,8 @@ These are basic instructions for setting up Amazon S3 for uploading photos. The 
 - A params object is created. The bucket name goes on the Bucket property, the buffer goes on Body, the filename (coming in on the req.body) goes on Key, and filetype (also on req.body) goes on ContentType. ACL is an optional key-value pair that allows for more to be done with the uploaded image.
 - Using the built-in .upload method and passing in the params object, upload the image. In the callback function for the .upload method, accept an error and the return data. Handle the error if necessary and send back the data if successful. The data object sent back will include a property on which is stored the uploaded image's new S3 url. This url can be stored in a database or used to access the uploaded image.
 
+<details> <summary> server.js </summary> 
+
 ```js
     require('dotenv').config(); // 'dot-env' gives us acces to the .env variables
     const express = require('express')
@@ -100,3 +102,5 @@ These are basic instructions for setting up Amazon S3 for uploading photos. The 
     });
 
 ```
+
+</details>
