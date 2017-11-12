@@ -29,6 +29,7 @@ These are basic instructions for setting up Amazon S3 for uploading photos. The 
 <details><summary>More explanation about FileReader</summary>
 
 FileReader is not an S3 thing. It is a file API built into HTML5 for uploading local images to the web. Most browsers support it. No installation is required. There are four basic steps for using FileReader in an app like this:
+
     1. Create an instance of FileReader and store it in a variable (often named "reader").
     2. Save the file in variable (often named "file"). This is the same file mentioned above, 
     the file captured by the input event.
