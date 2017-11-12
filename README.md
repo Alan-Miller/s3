@@ -25,7 +25,7 @@ These are basic instructions for setting up Amazon S3 for uploading photos. The 
 ```
 
 ## Front End: input event and FileReader
-- If you intend for users to upload images to S3 from their local machines, you will likely need either an input or some kind of drop zone for uploading user images. This app has a front end built in React and uses a simple file input tag ( ```<input type=file />``` ) to choose a file. The input has an onChange event listener that captures the input event and stores the file in a variable called "file" (see ImageUploader.js to see how this was done).
+- If you intend for users to upload images to S3 from their local machines, you will likely need either an input or some kind of drop zone for uploading user images. This app has a front end built in React and uses a simple file input tag ( ```<input type=file />``` ) to choose a file. The input has an onChange event listener that captures the input event and stores the file in a variable called ```file``` (see ImageUploader.js to see how this was done).
 - This app then uses FileReader to read the stored file before sending it to the server to be uploaded to S3.
 
 <details><summary>More explanation about FileReader</summary>
@@ -34,14 +34,14 @@ These are basic instructions for setting up Amazon S3 for uploading photos. The 
 
 - There are four basic steps for using FileReader in an app like this:
     1. Create an instance of FileReader and store it in a variable (often named ```reader```).
-    2. Save the file in variable (often named "file"). This is the same file mentioned above, 
+    2. Save the file in variable (often named ```file```). This is the same file mentioned above, 
     the file captured by the input event.
     3. Tell the reader to read (i.e., interpret) the file using a built-in FileReader method. Here, 
     we use the .readAsDataURL method to read image data, but there are other methods too, such as 
     the .readAsText method for reading text data.
     4. Use the built-in .onload method to tell FileReader what to do with the file once the reader 
     has read it. Once the file has been read, FileReader stores the file in the .result property on 
-    the reader (e.g., in "reader.result" if the FileReader instance was named "reader").
+    the reader (e.g., in ```reader.result``` if the FileReader instance was named ```reader```).
 
 - Here is an example of those four steps, taken from the code in this app:
     
