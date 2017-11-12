@@ -60,6 +60,8 @@ These are basic instructions for setting up Amazon S3 for uploading photos. The 
 ```
 
 </details>
+
+<br/>
         
 - Finally, this app uses a button (conditionally rendered once an image has been set to this.state) which triggers a function that passes the value on ```this.state.pic``` to a POST request, sending it to the server.
 
